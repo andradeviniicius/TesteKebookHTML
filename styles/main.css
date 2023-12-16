@@ -34,6 +34,13 @@ body {
 .signInForm__container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  height: 35%;
+}
+
+.signInForm__form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
@@ -50,4 +57,11 @@ body {
 }
 
 .signInForm__separator {
+  display: flex;
+  width: 100%;
+  gap: 15px;
+
+  hr {
+    width: 100px;
+  }
 }

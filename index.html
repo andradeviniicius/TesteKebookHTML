@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="styles/button.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/reset.css" />
-
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <title>Kebook Login Page</title>
   </head>
   <body>
@@ -78,35 +81,31 @@
       </div>
 
       <div class="mainContent__right">
-        <div class="signIn__form">
-          <h1>Login</h1>
+        <form class="signInForm__container">
+          <h1 class="signInForm__title">Login</h1>
 
-          <p>Lorem ipsum dolor sit.</p>
+          <label for="usernameInput" class="signInForm__label">Username</label>
+          <input id="usernameInput" class="signInForm__input" type="text" />
 
-          <form action="">
-            <label for="mainContent__usernameInput">Username</label>
-            <input id="mainContent__usernameInput" type="text" />
+          <label for="passwordInput" class="signInForm__label">Password</label>
+          <input id="passwordInput" class="signInForm__input" type="text" />
 
-            <label for="mainContent__passwordInput">Password</label>
-            <input id="mainContent__passwordInput" type="text" />
+          <button type="submit" class="signInForm__submit">Login Now</button>
 
-            <button>Login Now</button>
-          </form>
-
-          <div>
+          <div class="signInForm__separator">
             <hr />
             or
             <hr />
           </div>
 
           <button
-            type="button"
+            type="submit"
             class="mainContent__loginWithGoogleBtn"
             onclick=""
           >
             Sign in with Google
           </button>
-        </div>
+        </form>
       </div>
     </div>
   </body>

@@ -83,17 +83,37 @@
       <div class="mainContent__right">
         <div class="signInForm__container">
           <form class="signInForm__form" action="">
+            
             <h1 class="signInForm__title">Login</h1>
 
-            <label for="usernameInput" class="signInForm__label"
-              >Username</label
-            >
-            <input id="usernameInput" class="signInForm__input" type="text" />
+            <div class="baseInput">
+              <label for="emailInput" class="baseInput__screenReader"
+                >First name</label
+              >
+              <input
+                id="emailInput"
+                class="baseInput__input"
+                placeholder="ex: johndoe@email.com"
+              />
+              <span class="baseInput__labelWrap" aria-hidden="true">
+                <span class="baseInput__label">E-mail</span>
+              </span>
+            </div>
 
-            <label for="passwordInput" class="signInForm__label"
-              >Password</label
-            >
-            <input id="passwordInput" class="signInForm__input" type="text" />
+            <div class="baseInput">
+              <label for="passwordInput" class="baseInput__screenReader"
+                >Password</label
+              >
+              <input
+                id="passwordInput"
+                class="baseInput__input"
+                placeholder=""
+                type="password"
+              />
+              <span class="baseInput__labelWrap" aria-hidden="true">
+                <span class="baseInput__label">Password</span>
+              </span>
+            </div>
 
             <button type="submit" class="signInForm__submit">Login Now</button>
           </form>

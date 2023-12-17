@@ -40,7 +40,7 @@ body {
 }
 
 .signInForm__form {
-  font-family: 'Poppins', sans-serif; 
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,9 +50,13 @@ body {
 }
 
 .signInForm__title {
+  font-size: 22px;
+}
+.signInForm__text {
+  font-size: 12px;
 }
 
-.baseInput__screenReader{
+.baseInput__screenReader {
   width: var(--baseInput__screenReader-width, 1px);
   height: var(--baseInput__screenReader-height, 1px);
   padding: var(--baseInput__screenReader-padding, 0);
@@ -62,9 +66,9 @@ body {
   clip: var(--baseInput__screenReader-clip, rect(1px, 1px, 1px, 1px));
   overflow: var(--baseInput__screenReader-overflow, hidden);
 }
-.baseInput__input{ 
+.baseInput__input {
   --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-  
+
   background-color: transparent;
   border-radius: 0;
   border: none;
@@ -76,58 +80,63 @@ body {
   font-size: inherit;
 }
 
-.baseInput__input:focus::-webkit-input-placeholder{
+.baseInput__input:focus::-webkit-input-placeholder {
   color: var(--uiFieldPlaceholderColor);
 }
 
-.baseInput__input:focus::-moz-placeholder{
+.baseInput__input:focus::-moz-placeholder {
   color: var(--uiFieldPlaceholderColor);
 }
 
-.baseInput{
+.baseInput {
   --uiFieldBorderWidth: var(--fieldBorderWidth, 2px);
   --uiFieldPaddingRight: var(--fieldPaddingRight, 1rem);
-  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);   
-  --uiFieldBorderColorActive: var(--fieldBorderColorActive, rgba(22, 22, 22, 1));
+  --uiFieldPaddingLeft: var(--fieldPaddingLeft, 1rem);
+  --uiFieldBorderColorActive: var(
+    --fieldBorderColorActive,
+    rgba(22, 22, 22, 1)
+  );
 
   display: var(--fieldDisplay, inline-flex);
   position: relative;
   font-size: var(--fieldFontSize, 1rem);
 }
 
-.baseInput__input{
+.baseInput__input {
   box-sizing: border-box;
   width: var(--fieldWidth, 100%);
   height: var(--fieldHeight, 3rem);
-  padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight) var(--fieldPaddingBottom, .5rem) var(--uiFieldPaddingLeft);
-  border-bottom: var(--uiFieldBorderWidth) solid var(--fieldBorderColor, rgba(0, 0, 0, .25));  
+  padding: var(--fieldPaddingTop, 1.25rem) var(--uiFieldPaddingRight)
+    var(--fieldPaddingBottom, 0.5rem) var(--uiFieldPaddingLeft);
+  border-bottom: var(--uiFieldBorderWidth) solid
+    var(--fieldBorderColor, rgba(0, 0, 0, 0.25));
 }
 
-.baseInput__input:focus{
+.baseInput__input:focus {
   outline: none;
 }
 
-.baseInput__input::-webkit-input-placeholder{
+.baseInput__input::-webkit-input-placeholder {
   opacity: 0;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
-.baseInput__input::-moz-placeholder{
+.baseInput__input::-moz-placeholder {
   opacity: 0;
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
-.baseInput__input:focus::-webkit-input-placeholder{
+.baseInput__input:focus::-webkit-input-placeholder {
   opacity: 1;
-  transition-delay: .2s;
+  transition-delay: 0.2s;
 }
 
-.baseInput__input:focus::-moz-placeholder{
+.baseInput__input:focus::-moz-placeholder {
   opacity: 1;
-  transition-delay: .2s;
+  transition-delay: 0.2s;
 }
 
-.baseInput__labelWrap{
+.baseInput__labelWrap {
   box-sizing: border-box;
   pointer-events: none;
   cursor: text;
@@ -139,7 +148,7 @@ body {
   left: 0;
 }
 
-.baseInput__labelWrap::after{
+.baseInput__labelWrap::after {
   content: "";
   box-sizing: border-box;
   width: 100%;
@@ -151,30 +160,33 @@ body {
   left: 0;
 }
 
-.baseInput__input:focus ~ .baseInput__labelWrap::after{
+.baseInput__input:focus ~ .baseInput__labelWrap::after {
   opacity: 1;
 }
 
-.baseInput__label{
+.baseInput__label {
   position: absolute;
   left: var(--uiFieldPaddingLeft);
-  top: calc(50% - .5em);
+  top: calc(50% - 0.5em);
 
   line-height: 1;
   font-size: var(--fieldHintFontSize, inherit);
 
-  transition: top .2s cubic-bezier(0.9, -0.15, 0.1, 1.15), opacity .2s ease-out, font-size .2s ease-out;
+  transition: top 0.2s cubic-bezier(0.9, -0.15, 0.1, 1.15),
+    opacity 0.2s ease-out, font-size 0.2s ease-out;
 }
 
 .baseInput__input:focus ~ .baseInput__labelWrap .baseInput__label,
-.baseInput__input:not(:placeholder-shown) ~ .baseInput__labelWrap .baseInput__label{
-  --fieldHintFontSize: var(--fieldHintFontSizeFocused, .75rem);
+.baseInput__input:not(:placeholder-shown)
+  ~ .baseInput__labelWrap
+  .baseInput__label {
+  --fieldHintFontSize: var(--fieldHintFontSizeFocused, 0.75rem);
 
-  top: var(--fieldHintTopHover, .25rem);
+  top: var(--fieldHintTopHover, 0.25rem);
 }
-.baseInput__labelWrap::after{
+.baseInput__labelWrap::after {
   border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColorActive);
-  transition: opacity .2s ease-out;
+  transition: opacity 0.2s ease-out;
 }
 
 .signInForm__submit {

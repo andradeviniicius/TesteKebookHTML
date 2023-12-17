@@ -3,15 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="styles/button.css" />
-    <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/reset.css" />
+
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/base-inputs-buttons.css" />
+    <link rel="stylesheet" href="styles/loginForm.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <title>Kebook Login Page</title>
+    <script defer src="script.js"></script>
   </head>
   <body>
     <div class="mainContent">
@@ -81,9 +83,9 @@
       </div>
 
       <div class="mainContent__right">
-        <div class="signInForm__container">
-          <form class="signInForm__form" action="">
-            <h1 class="signInForm__title">Login</h1>
+        <div class="loginForm__container">
+          <form class="loginForm__form" action="" id="form">
+            <h1 class="loginForm__title">Login to Your Account</h1>
 
             <div class="baseInput">
               <label for="emailInput" class="baseInput__screenReader"
@@ -91,6 +93,7 @@
               >
               <input
                 id="emailInput"
+                name="emailInput"
                 class="baseInput__input"
                 placeholder="ex: johndoe@email.com"
               />
@@ -105,6 +108,7 @@
               >
               <input
                 id="passwordInput"
+                name="passwordInput"
                 class="baseInput__input"
                 placeholder=""
                 type="password"
@@ -114,21 +118,22 @@
               </span>
             </div>
 
-            <button type="submit" class="signInForm__button--login">Login Now</button>
+            <button type="submit" class="submit-button--login">Login</button>
 
-            <p class="signInForm__text">Don’t have an account? <a href="">Register here</a></p>
+            <p class="loginForm__text">
+              Forgot your password?
+              <a href="" onclick="toggleRegisterScreen()"
+                >Click here to update it</a
+              >
+            </p>
           </form>
-          <div class="signInForm__separator">
+          <div class="loginForm__separator">
             <hr />
             or
             <hr />
           </div>
 
-          <button
-            type="submit"
-            class="mainContent__loginWithGoogleBtn"
-            onclick=""
-          >
+          <button type="submit" class="loginWithGoogleBtn" onclick="">
             Sign in with Google
           </button>
         </div>

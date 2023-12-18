@@ -23,13 +23,3 @@
   .loginForm__text {
     font-size: 12px;
   }
-  
-  .loginForm__separator {
-    display: flex;
-    width: 100%;
-    gap: 15px;
-  
-    hr {
-      width: 100px;
-    }
-  }

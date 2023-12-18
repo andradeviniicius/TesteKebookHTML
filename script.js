@@ -1,45 +1,31 @@
-const openForgetPasswordModal = document.querySelector(
-  "#open-forgetPassword-modal"
-);
+const userName = document.getElementById("userInput");
+const password = document.getElementById("passwordInput");
+const form = document.getElementById("form");
+const errorElement = document.getElementById("error");
 
-const closeForgetPasswordModal = document.querySelector(
-  "#close-forgetPassword-modal"
-);
-
-const newPasswordInput = document.getElementById("newPassword");
-const confirmPasswordInput = document.getElementById("confirmPassword");
-
-const modal = document.querySelector("#modal");
-
-function closeModal() {
-  modal.setAttribute("closing", "");
-
-  modal.addEventListener(
-    "animationend",
-    (e) => {
-      modal.removeAttribute("closing");
-      modal.close();
-    },
-    { once: true }
-  );
-  confirmPasswordInput.value = "";
-  newPasswordInput.value = "";
-  showConfirmToast();
-  modal.close();
-}
-
-openForgetPasswordModal.addEventListener("click", (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
-  modal.showModal();
-});
+  let messages = [];
+  console.log(messages);
 
-modal.addEventListener("click", (e) => {
-  if (e.target.nodeName == "DIALOG") {
-    closeModal();
+  if (userName.value === "" || userName.value == null) {
+    const usernameMessage = document.createElement("p");
+    const newContent = document.createTextNode("Username is required!");
+    usernameMessage.appendChild(newContent);
+    messages.push(usernameMessage);
   }
-});
 
-closeForgetPasswordModal.addEventListener("click", (e) => {
-  e.preventDefault();
-  closeModal();
+  if (password.value === "" || password.value == null) {
+    const passwordMessage = document.createElement("p");
+    const newContent = document.createTextNode("Password is required!");
+    passwordMessage.appendChild(newContent);
+    messages.push(passwordMessage);
+  }
+
+  if (messages.length > 0) {
+    e.preventDefault();
+    errorElement.innerHTML = messages.map((el) => el.innerHTML).join("<br>");
+  } else {
+    window.location.href = window.location.origin + "/dashboard.html";
+  }
 });

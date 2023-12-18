@@ -27,7 +27,6 @@ function closeModal() {
   );
   confirmPasswordInput.value = "";
   newPasswordInput.value = "";
-  successSnackbar();
   modal.close();
 }
 
@@ -56,6 +55,7 @@ confirmResetPasswordBtn.addEventListener("click", (e) => {
     return;
   }
   if (newPasswordInput.value === confirmPasswordInput.value) {
+    successSnackbar();
     closeModal();
   } else {
     errorElement.innerText = "Passwords must be the same";

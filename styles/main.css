@@ -18,6 +18,11 @@ body {
   width: 100%;
   background-image: url("/assets//back-sec-5-home.png");
 }
+@media (max-width: 630px) {
+  .mainContent__left {
+    display: none;
+  }
+}
 
 .mainContent__logo {
   margin: 2%;

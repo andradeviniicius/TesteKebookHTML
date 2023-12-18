@@ -1,21 +1,45 @@
-const email = document.getElementById("emailInput");
-const password = document.getElementById("passwordInput");
-const form = document.getElementById("form");
-const errorElement = document.getElementById("error");
+const openForgetPasswordModal = document.querySelector(
+  "#open-forgetPassword-modal"
+);
 
-function toggleRegisterScreen() {
-  alert("teste");
+const closeForgetPasswordModal = document.querySelector(
+  "#close-forgetPassword-modal"
+);
+
+const newPasswordInput = document.getElementById("newPassword");
+const confirmPasswordInput = document.getElementById("confirmPassword");
+
+const modal = document.querySelector("#modal");
+
+function closeModal() {
+  modal.setAttribute("closing", "");
+
+  modal.addEventListener(
+    "animationend",
+    (e) => {
+      modal.removeAttribute("closing");
+      modal.close();
+    },
+    { once: true }
+  );
+  confirmPasswordInput.value = "";
+  newPasswordInput.value = "";
+  showConfirmToast();
+  modal.close();
 }
 
-form.addEventListener("submit", (e) => {
-  let messages = [];
+openForgetPasswordModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.showModal();
+});
 
-  if (email.value === "" || email.value == null) {
-    messages.push("Email is required");
+modal.addEventListener("click", (e) => {
+  if (e.target.nodeName == "DIALOG") {
+    closeModal();
   }
+});
 
-  if (messages.length > 0) {
-    e.preventDefault();
-    errorElement.innerText = messages.join("");
-  }
+closeForgetPasswordModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  closeModal();
 });

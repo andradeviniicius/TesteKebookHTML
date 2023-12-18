@@ -29,3 +29,11 @@ form.addEventListener("submit", (e) => {
     window.location.href = window.location.origin + "/dashboard.html";
   }
 });
+
+function successSnackbar() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
+}

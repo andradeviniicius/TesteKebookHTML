@@ -27,7 +27,7 @@ function closeModal() {
   );
   confirmPasswordInput.value = "";
   newPasswordInput.value = "";
-  showConfirmToast();
+  successSnackbar();
   modal.close();
 }
 

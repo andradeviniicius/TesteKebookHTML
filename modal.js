@@ -3,13 +3,16 @@ const openForgetPasswordModal = document.querySelector(
 );
 
 const closeForgetPasswordModal = document.querySelector(
-  "#close-forgetPassword-modal"
+  "#closeForgetPasswordModal"
 );
 
 const newPasswordInput = document.getElementById("newPassword");
 const confirmPasswordInput = document.getElementById("confirmPassword");
 
 const modal = document.querySelector("#modal");
+const confirmResetPasswordBtn = document.getElementById(
+  "confirmResetPasswordBtn"
+);
 
 function closeModal() {
   modal.setAttribute("closing", "");
@@ -42,4 +45,19 @@ modal.addEventListener("click", (e) => {
 closeForgetPasswordModal.addEventListener("click", (e) => {
   e.preventDefault();
   closeModal();
+});
+
+confirmResetPasswordBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  const errorElement = document.getElementById("modalError");
+
+  if (newPasswordInput.value === "" || confirmPasswordInput.value === "") {
+    errorElement.innerText = "You have to fill both inputs";
+    return;
+  }
+  if (newPasswordInput.value === confirmPasswordInput.value) {
+    closeModal();
+  } else {
+    errorElement.innerText = "Passwords must be the same";
+  }
 });
